@@ -1,0 +1,181 @@
+:root {
+  --header-background-color: rgb(92, 90, 90);
+  --footer-background-color: rgb(112, 110, 110);
+  --color-white: #fff;
+  --text-color: #2e2929;
+}
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100svh;
+  background-image: url("./assets/background.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+p {
+  color: var(--text-color);
+}
+.detalles {
+  color: rgb(5, 166, 194);
+  font-weight: bold;
+}
+.title,
+.subtitle {
+  color: var(--color-white);
+}
+.experiencia {
+  display: flex;
+  flex-direction: column;
+}
+.border-bottom {
+  border-bottom: thin solid var(--header-background-color);
+}
+
+.display-flex {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1em;
+}
+
+@media (min-width: 360px) {
+  .layout {
+    display: grid;
+    grid-template:
+      "header" 150px
+      "main" 1fr
+      "footer" 40px
+      /1fr;
+  }
+  .container-header {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
+  }
+  .header {
+    grid-area: header;
+    background-color: var(--header-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .title,
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .main {
+    grid-area: main;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+  }
+  .footer {
+    grid-area: footer;
+    background-color: var(--footer-background-color);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  /** Logo **/
+  .logo {
+    margin-top: 50px;
+    background-attachment: fixed;
+  }
+  .logo img {
+    width: 165px;
+  }
+
+  /** Iconos **/
+  .icons img {
+    width: 30px;
+  }
+
+  /** Section Contacto **/
+  .section-contacto {
+    padding: 1em;
+    max-width: 1200px;
+  }
+  .section-contacto > h2 {
+    color: black;
+    margin-top: 2rem;
+    margin-left: 5.5vw;
+  }
+  .contacto-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 0 auto;
+    padding: 0.5em;
+    width: 85%;
+  }
+  .phone-container,
+  .email-container,
+  .linkedin-container,
+  .github-container,
+  .portafolio-container,
+  .ubicacion-container {
+    display: flex;
+    align-items: center;
+  }
+
+  /** Section Resumen **/
+  .section-resumen-experiencia {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em;
+    min-width: 50%;
+    gap: 0.5em;
+  }
+
+  .section-resumen-experiencia h2 {
+    color: black;
+  }
+  .agencia-aprendizaje {
+    grid-area: 2/2;
+  }
+  .agencia-aprendizaje-2 {
+    grid-area: 3/2;
+  }
+}
+
+@media (min-width: 500px) {
+  .title,
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  /** Logo **/
+  .logo {
+    margin-top: 50px;
+  }
+  .logo img {
+    width: 165px;
+  }
+}
